@@ -1,0 +1,32 @@
+name: siyadi_admin
+description: SIYADI admin dashboard (web)
+publish_to: "none"
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.9.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  flutter_riverpod: ^3.3.2
+  go_router: ^17.2.3
+  google_fonts: ^8.1.0
+  firebase_core: ^4.14.0
+  firebase_auth: ^6.6.1
+  cloud_firestore: ^6.9.0
+  google_sign_in: ^7.2.0
+  intl: ^0.20.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+# firebase_core_web 3.11.0 uses Object.isA (Dart 3.12+ only). Flutter 3.35 / Dart 3.9 needs 3.10.0.
+dependency_overrides:
+  firebase_core_web: 3.10.0
+
+flutter:
+  uses-material-design: true

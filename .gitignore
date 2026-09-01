@@ -1,0 +1,105 @@
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.build/
+.buildlog/
+.history
+.svn/
+.swiftpm/
+migrate_working_dir/
+*.tmp
+*.temp
+*.bak
+
+# IntelliJ / Android Studio
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# VS Code / Cursor (keep shared settings if you add them later)
+.vscode/
+.cursor/
+.claude/
+
+# Flutter/Dart/Pub
+**/doc/api/
+**/ios/Flutter/.last_build_id
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+**/build/
+/coverage/
+.fvm/
+.fvmrc
+
+# Symbolication / obfuscation
+app.*.symbols
+app.*.map.json
+
+# Android Studio build outputs
+**/android/app/debug
+**/android/app/profile
+**/android/app/release
+
+# --- Secrets & credentials (do not commit) ---
+.env
+.env.*
+!.env.example
+*.pem
+*.p8
+*.p12
+*.mobileprovision
+**/key.properties
+**/*.keystore
+**/*.jks
+**/serviceAccount*.json
+**/firebase-adminsdk*.json
+**/google-cloud-service-account*.json
+secrets/
+**/secrets/
+
+# Machine-specific (SDK paths, Maps API key, etc.)
+**/local.properties
+
+# Firebase CLI local cache / emulators
+.firebase/
+firebase-debug.log
+firebase-debug.*.log
+firestore-debug.log
+ui-debug.log
+pubsub-debug.log
+database-debug.log
+
+# Misplaced duplicate at repo root (canonical copies live under ios/ / android/)
+/GoogleService-Info.plist
+
+# Optional: uncomment if you prefer NOT to commit Firebase client configs.
+# You will need to add them locally after clone (FlutterFire / Firebase console).
+# **/google-services.json
+# **/GoogleService-Info.plist
+# **/firebase_options.dart
+
+# Test / coverage extras
+coverage/
+*.lcov
+
+# Platform ephemeral
+**/ephemeral/
+**/Flutter/ephemeral/
+**/Pods/
+**/.symlinks/
+**/DerivedData/
+**/xcuserdata/
+
+# Windows / tooling
+Thumbs.db
+Desktop.ini
+*.stackdump

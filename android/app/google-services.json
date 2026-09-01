@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "910645534873",
+    "project_id": "siyadi-lb",
+    "storage_bucket": "siyadi-lb.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:910645534873:android:40289125b4352c76629808",
+        "android_client_info": {
+          "package_name": "com.siyadi.siyadi"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBlvHuaqe1hcJjY8DDa-61MHEkudbbKLQo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

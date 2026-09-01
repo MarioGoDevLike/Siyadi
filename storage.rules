@@ -1,0 +1,56 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(uid) {
+      return signedIn() && request.auth.uid == uid;
+    }
+
+    function isImageOrVideo() {
+      return request.resource.contentType.matches('image/.*')
+        || request.resource.contentType.matches('video/.*');
+    }
+
+    function underMaxSize() {
+      // 40MB soft ceiling for MVP media
+      return request.resource.size < 40 * 1024 * 1024;
+    }
+
+    match /users/{userId}/avatar/{fileName} {
+      allow read: if signedIn();
+      allow write: if isOwner(userId) && isImageOrVideo() && underMaxSize();
+      allow delete: if isOwner(userId);
+    }
+
+    match /users/{userId}/posts/{postId}/{fileName} {
+      allow read: if signedIn();
+      allow write: if isOwner(userId) && isImageOrVideo() && underMaxSize();
+      allow delete: if isOwner(userId);
+    }
+
+    match /users/{userId}/field_reports/{reportId}/{fileName} {
+      allow read: if signedIn();
+      allow write: if isOwner(userId) && isImageOrVideo() && underMaxSize();
+      allow delete: if isOwner(userId);
+    }
+
+    match /users/{userId}/locations/{locationId}/{fileName} {
+      allow read: if signedIn();
+      allow write: if isOwner(userId) && isImageOrVideo() && underMaxSize();
+      allow delete: if isOwner(userId);
+    }
+
+    match /users/{userId}/marketplace/{listingId}/{fileName} {
+      allow read: if signedIn();
+      allow write: if isOwner(userId) && isImageOrVideo() && underMaxSize();
+      allow delete: if isOwner(userId);
+    }
+
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}
